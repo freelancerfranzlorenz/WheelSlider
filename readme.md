@@ -113,5 +113,5 @@ function onInit()
 </body>
 </html>
 ```
-And this is how it looks like - please see the file 'readme.png'
+And this is how it looks like - please see the file 'readme.png'<br/>
 <img src="./readme.png">
