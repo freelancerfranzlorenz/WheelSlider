@@ -1,0 +1,54 @@
+<html>
+<head>
+<meta charset='utf-8'>
+<title>WheelSlider Demo</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<script src="wheelslider.js"></script>
+<script>
+//
+var Wheel1 = new WheelSlider();
+var Wheel2 = new WheelSlider();
+var Wheel3 = new WheelSlider();
+//
+function onInit()
+{
+   Wheel1.init( "canvas1" );
+   Wheel1.canvas.ontouchmove = function(e){ Wheel1.handleTouchMove(e); };
+   Wheel1.canvas.onmousemove = function(e){ Wheel1.handleMouseMove(e); };
+   Wheel2.init( "canvas2" );
+   Wheel2.canvas.ontouchmove = function(e){ Wheel2.handleTouchMove(e); };
+   Wheel2.canvas.onmousemove = function(e){ Wheel2.handleMouseMove(e); };
+   Wheel2.setOption( "TickColor1", "gray" );
+   Wheel2.setOption( "TickColor3", "gray" );
+   Wheel2.redraw();
+   Wheel3.init( "canvas3" );
+   Wheel3.canvas.ontouchmove = function(e){ Wheel3.handleTouchMove(e); };
+   Wheel3.canvas.onmousemove = function(e){ Wheel3.handleMouseMove(e); };
+   Wheel3.setOption( "TickColor1", "red" );
+   Wheel3.setOption( "TickColor2", "black" );
+   Wheel3.setOption( "TickColor3", "blue" );
+   Wheel3.redraw();
+   //
+   window.onscroll = function(){ Wheel1.handleResize(); Wheel2.handleResize(); Wheel3.handleResize(); }
+   window.onresize = function(){ Wheel1.handleResize(); Wheel2.handleResize(); Wheel3.handleResize();}
+}
+
+</script>
+<style>
+   body{ background-color: #eeeeee; }
+   #canvas{border:0px solid red; }
+</style>
+</head>
+
+<body onload="onInit('canvas');">
+   <h4>WHEELSLIDER DEMO</h4>
+   <table>
+      <tr><th>First</th><th>Second</th><th>Third</th></tr>
+      <tr>
+         <td><canvas id="canvas1" width=200 height=300></canvas></td>
+         <td><canvas id="canvas2" width=100 height=300></canvas></td>
+         <td><canvas id="canvas3" width=100 height=300></canvas></td>
+      </tr>
+   </table>
+</body>
+</html>
