@@ -4,12 +4,18 @@
 This javascript module displays and handle a sliderwheel.
 
 ## Wheelslider API
-The wheelslider class has the following member functions:
+To use the wheelslider control you have to create a global variable of
+the class WheelSlider. For example:<br/>
+`var Wheel1 = new WheelSlider();`
+
+Now, let's look into the wheelslider class to see it's member functions:
 
 ### init( sCanvasId )
 This function initialize the internal variables and draws the wheelslider.<br/>
 NOTE: The canvas must exists. To ensure this, call this function after the onload event of your website.<br/>
-<i>sCanvasId</i> is the ID of the canvas element
+<i>sCanvasId</i> is the ID of the canvas element<br/>
+For example:<br/>
+`Wheel1.init( "canvas1" );`
 
 ### setOption( sOption, sValue )
 This function sets an option parameter.<br/>
@@ -27,8 +33,8 @@ This function sets an option parameter.<br/>
 ### redraw()
 This function forces a redraw of the wheelslider. 
 It is recommended to call this after you have changed 
-one or more options.
-
+one or more options. For example:<br/>
+`Wheel1.redraw();`
 
 ### handleResize()
 This function should be called, if the size of the window
